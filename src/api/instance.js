@@ -4,7 +4,7 @@ import { errorXMLParser } from "./util/errorXMLParser";
 
 const getInstance = () => {
   const instance = axios.create({
-    baseURL: "/api",
+    baseURL: "http://apis.data.go.kr/B552584/ArpltnInforInqireSvc",
     params: {
       serviceKey: import.meta.env.VITE_API_SERVICE_KEY,
       returnType: "json",
