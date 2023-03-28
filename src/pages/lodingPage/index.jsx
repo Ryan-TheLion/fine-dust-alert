@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as LoadingSVG } from "../../spinner.svg";
+// import { ReactComponent as LoadingSVG } from "../../spinner.svg";
 import * as Styled from "./style";
 import { useOutletContext } from "react-router-dom";
 
@@ -8,7 +8,7 @@ function LoadingPage() {
 
   return (
     <Styled.LoadingPage {...sizeContext}>
-      <LoadingSVG />
+      <img src="/assets/spinner.svg" alt="loading" />
     </Styled.LoadingPage>
   );
 }
