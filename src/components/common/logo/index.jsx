@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as LogoSVG } from "/src/assets/logo.svg";
+import { ReactComponent as LogoSVG } from "../../../logo.svg";
 import * as Styled from "./style";
 
 function Logo() {

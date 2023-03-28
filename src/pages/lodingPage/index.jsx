@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as LoadingSVG } from "/src/assets/spinner.svg";
+import { ReactComponent as LoadingSVG } from "../../spinner.svg";
 import * as Styled from "./style";
 import { useOutletContext } from "react-router-dom";
 

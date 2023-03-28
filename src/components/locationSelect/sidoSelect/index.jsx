@@ -1,23 +1,23 @@
 import React, { useRef } from "react";
 import { useAppStore } from "../../../store/slices/appStoreSlice";
 import DropDown from "../../dropDown";
-import seoul from "/src/assets/seoul.jpg";
-import busan from "/src/assets/busan.gif";
-import daegu from "/src/assets/daegu.png";
-import incheon from "/src/assets/incheon.jpg";
-import gwangju from "/src/assets/gwangju.jpg";
-import daejeon from "/src/assets/daejeon.jpg";
-import ulsan from "/src/assets/ulsan.jpg";
-import gyeonggido from "/src/assets/gyeonggido.jpg";
-import gangwondo from "/src/assets/gangwondo.jpg";
-import chungbuk from "/src/assets/chungbuk.jpg";
-import chungnam from "/src/assets/chungnam.jpg";
-import jeonbuk from "/src/assets/jeonbuk.jpg";
-import jeonnam from "/src/assets/jeonnam.jpg";
-import gyeongbuk from "/src/assets/gyeongbuk.png";
-import gyeongnam from "/src/assets/gyeongnam.gif";
-import jeju from "/src/assets/jeju.jpg";
-import sejong from "/src/assets/sejong.jpg";
+import seoul from "../../../seoul.jpg";
+import busan from "../../../busan.gif";
+import daegu from "../../../daegu.png";
+import incheon from "../../../incheon.jpg";
+import gwangju from "../../../gwangju.jpg";
+import daejeon from "../../../daejeon.jpg";
+import ulsan from "../../../ulsan.jpg";
+import gyeonggido from "../../../gyeonggido.jpg";
+import gangwondo from "../../../gangwondo.jpg";
+import chungbuk from "../../../chungbuk.jpg";
+import chungnam from "../../../chungnam.jpg";
+import jeonbuk from "../../../jeonbuk.jpg";
+import jeonnam from "../../../jeonnam.jpg";
+import gyeongbuk from "../../../gyeongbuk.png";
+import gyeongnam from "../../../gyeongnam.gif";
+import jeju from "../../../jeju.jpg";
+import sejong from "../../../sejong.jpg";
 
 const sidoList = [
   "서울",
