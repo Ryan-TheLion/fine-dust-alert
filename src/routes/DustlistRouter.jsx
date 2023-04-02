@@ -8,13 +8,9 @@ function DustlistRouter() {
   const { ...screenSize } = useOutletContext();
   const { selectedCity } = useSelector((state) => state.appStore);
 
-  const { data, isLoading, error } = useDataList(selectedCity);
-  if (error) throw error;
-  return isLoading ? (
-    <LoadingPage />
-  ) : (
-    <Outlet context={{ dustList: data, ...screenSize }} />
-  );
+  const { data } = useDataList(selectedCity);
+
+  return <Outlet context={{ dustList: data, ...screenSize }} />;
 }
 
 export default DustlistRouter;

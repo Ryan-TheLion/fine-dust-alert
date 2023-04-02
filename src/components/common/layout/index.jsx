@@ -27,21 +27,28 @@ const titleMap = new Map([
       renderText: "즐겨찾기 지역 미세먼지",
     },
   ],
+  [
+    "404page",
+    {
+      metaTitle: "404 Not Found",
+      renderText: "404 Not Found",
+    },
+  ],
 ]);
 
 function Layout() {
   const currentScreenSize = useScreenSize();
   const location = useLocation();
 
-  console.log({ location: location.pathname });
+  const titleInfo = titleMap.get(location.pathname) ?? titleMap.get("404page");
 
   return (
     <Styled.Layout {...{ [currentScreenSize]: currentScreenSize }}>
       <Header {...{ [currentScreenSize]: currentScreenSize }} />
       <Title
         {...{ [currentScreenSize]: currentScreenSize }}
-        metaTitle={titleMap.get(location.pathname).metaTitle}
-        titleContent={titleMap.get(location.pathname).renderText}
+        metaTitle={titleInfo.metaTitle}
+        titleContent={titleInfo.renderText}
       />
       <Outlet context={{ [currentScreenSize]: currentScreenSize }} />
     </Styled.Layout>

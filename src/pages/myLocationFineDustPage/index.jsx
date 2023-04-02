@@ -23,8 +23,6 @@ function MyLocationFineDustPage() {
     }
   }, [dustList, selectedCity]);
 
-  console.log("mypage: ", { dustList, selectedCity, selectedStation });
-
   return (
     <Styled.MyLocationPage {...sizeContext}>
       <LocationSelect />

@@ -6,8 +6,9 @@ import {
   FavoritesPage,
   LocationFineDustPage,
   MyLocationFineDustPage,
+  ErrorPage,
+  NotFoundPage,
 } from "../pages";
-import ErrorPage from "../pages/errorPage";
 import LoadingPage from "../pages/lodingPage";
 import DustlistRouter from "./DustlistRouter";
 
@@ -18,17 +19,18 @@ function Router() {
         <Route path="/" element={<Layout />}>
           <Route
             element={
-              <ErrorBoundary FallbackComponent={ErrorPage}>
-                <DustlistRouter />
-              </ErrorBoundary>
+              <Suspense fallback={<LoadingPage />}>
+                <ErrorBoundary FallbackComponent={ErrorPage}>
+                  <DustlistRouter />
+                </ErrorBoundary>
+              </Suspense>
             }
           >
             <Route index element={<MyLocationFineDustPage />} />
             <Route path="finedust" element={<LocationFineDustPage />} />
             <Route path="favorites" element={<FavoritesPage />} />
           </Route>
-
-          <Route path="*" element={<>not found</>} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

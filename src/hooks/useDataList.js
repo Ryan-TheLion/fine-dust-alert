@@ -2,19 +2,20 @@ import useSWR from "swr";
 import { fineDustAxiosInstance, getSidoParams } from "../api/instance";
 
 export function useDataList(city) {
-  const { data, isLoading, error } = useSWR(`/getCity/${city}`, fetcher, {
+  const { data } = useSWR(`/getCity/${city}`, () => dustDataFetcher(city), {
     shouldRetryOnError: false,
     revalidateOnFocus: false,
+    suspense: true,
   });
 
-  return { data: data?.response.body.items, isLoading, error };
+  return { data: data?.response.body.items };
+}
 
-  async function fetcher() {
-    const apiResponse = await fineDustAxiosInstance.get(
-      "/getCtprvnRltmMesureDnsty",
-      { params: getSidoParams({ sidoName: city }) }
-    );
+export async function dustDataFetcher(city) {
+  const apiResponse = await fineDustAxiosInstance.get(
+    "/getCtprvnRltmMesureDnsty",
+    { params: getSidoParams({ sidoName: city }) }
+  );
 
-    return apiResponse.data;
-  }
+  return apiResponse.data;
 }
