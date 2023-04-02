@@ -2,13 +2,23 @@ import axios from "axios";
 import { APIError } from "./errors";
 import { errorXMLParser } from "./util/errorXMLParser";
 
+/*
+  proxy가 불안정하게 동작하여서 적용하지 않음
+  추후 안정화 될 경우 프록시 적용할 수 있음
+
+  baseURL:
+      import.meta.env.MODE === "development"
+        ? "/api"
+        : import.meta.env.VITE_API_URL,
+*/
+
 const getInstance = () => {
   const instance = axios.create({
-    baseURL: "https://apis.data.go.kr/B552584/ArpltnInforInqireSvc",
+    baseURL: import.meta.env.VITE_API_URL,
     params: {
       serviceKey: import.meta.env.VITE_API_SERVICE_KEY,
       returnType: "json",
-      numOfRows: "100",
+      numOfRows: "150",
       pageNo: "1",
       ver: "1.0",
     },
